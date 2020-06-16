@@ -1,16 +1,11 @@
 import React from 'react'
+import '../styles/startPage.css'
 
 const StartPage = () => {
   return (
-    <div className='row d-flex align-items-center justify-content-center'>
-      <div className="col-4 d-flex align-items-center justify-content-center">
-        <i class="fas fa-space-station-moon-alt fa-9x"></i>
-      </div>
-      <div className="col-4 d-flex align-items-center justify-content-center">
-        <i class="fas fa-space-station-moon-alt fa-9x"></i>
-      </div>
-      <div className="col-4 d-flex align-items-center justify-content-center">
-        <i class="fas fa-space-station-moon-alt fa-9x"></i>
+    <div className="row p-5 main_card_bg">
+      <div className="col-sm-12 h-100 main_card">
+        <h1>Please enter Player/Team names:</h1>
       </div>
     </div>
   )

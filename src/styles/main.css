@@ -48,3 +48,21 @@ table {
 	border-spacing: 0;
 }
 
+:root {
+	--white: #F0F7F4;
+	--black: #090B0A;
+
+	--primLight: #beebd6;
+	--prim: #A2E3C4;
+	--primDark: #618876;
+
+	--secLight: #b3bfb8;
+	--sec: #7E8D85;
+	--secDark: #3C493F;
+
+	--shadow: 3px 3px 10px 0px rgba(0,9,11,0.3);
+
+	--borderDark: solid 1px var(--secLight);
+	--borderLight: solid 1px var(--primLight);
+	--radius: 5px;
+}
