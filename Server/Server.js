@@ -25,6 +25,7 @@ app.use(checkUserSession)
 app.use( express.static( `${__dirname}/../build` ) )
 
 /**********************************************/
+app.post('/api/test', ctrl.test)
 /**********************************************/
 
 app.listen(SERVER_PORT, () => {
