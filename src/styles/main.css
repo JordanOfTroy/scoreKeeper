@@ -66,3 +66,12 @@ table {
 	--borderLight: solid 1px var(--primLight);
 	--radius: 5px;
 }
+
+.bttn {
+	background: var(--secLight);
+	padding: 7px 10px;
+	box-shadow: none;
+	border-radius: var(--radius);
+	border: none;
+	color: var(--white)
+}

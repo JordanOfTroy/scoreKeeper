@@ -1,5 +1,7 @@
 .main_card_bg {
   height: 100vh;
-  background: var(--white);
+  background: var(--primLight);
 }
+
+
 
