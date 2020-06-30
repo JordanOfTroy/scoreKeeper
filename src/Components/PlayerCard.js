@@ -5,13 +5,12 @@ const PlayerCard = (props) => {
     const {player, index} = props
 
     return (
-    <div className='playerList row d-flex justify-content-center align-items-center'>
-            <div key={index} className='playerBlock col-12 d-flex flex-column justify-content-center align-items-center'>
-              <h2>Player: {player.name}</h2>
-              <h2>Score: {player.score}</h2>
-              <br/>
-            </div>
-    </div>
+        <div key={index} className='playerBlock d-flex flex-row w-75 justify-content-between align-items-center mb-3'>
+            <h2>{player.name}</h2>
+            <h2>{player.score}</h2>
+            <input size='2'></input>
+            <br/>
+        </div>
     )
 }
 

@@ -68,7 +68,7 @@ table {
 }
 
 .bttn {
-	background: var(--secLight);
+	background: var(--primDark);
 	padding: 7px 10px;
 	box-shadow: none;
 	border-radius: var(--radius);
