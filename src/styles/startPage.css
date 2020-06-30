@@ -1,6 +1,11 @@
 .main_card_bg {
   height: 100vh;
   background: var(--primLight);
+  width: auto;
+}
+
+#newPlayer {
+  text-align: center;
 }
 
 

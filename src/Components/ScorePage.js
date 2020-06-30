@@ -1,24 +1,28 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
-const ScorePage = () => {
+const ScorePage = (props) => {
 
-  const [count, setCount] = useState(0)
-  const [testVal, setTestVal] = useState()
-
-  const showMe = (e) => {
-    setTestVal(e.target.value)
-    console.log(testVal)
-  }
+  const [players, setPlayers] = useState(null)
+  
+  useEffect(() => {
+    if (props) {
+      setPlayers(props.history.location.state.details.playerObjs)
+    }
+  }, [props])
 
   return (
-    <div>
-      <h1>Score Page</h1>
-      <h2>You have clicked {count} times</h2>
-      <button 
-        onClick={() => setCount(count + 1)}
-      >Click Me</button>
-
-      <input type="text" onChange={(e)=>showMe(e)}/>
+    <div className='playerList row d-flex justify-content-center align-items-center'>
+        {
+          players && players.map((playerObj, index) => {
+          return (
+            <div className='playerBlock col-12 d-flex flex-column justify-content-center align-items-center'>
+              <h2 key={index}>Player: {playerObj.name}</h2>
+              <h2 key={index}>Score: {playerObj.score}</h2>
+              <br/>
+            </div>
+          )
+          })
+        }
     </div>
   )
 }
