@@ -1,29 +1,41 @@
 import React, { useState, useEffect } from 'react'
+import PlayerCard from './PlayerCard.js'
 
 const ScorePage = (props) => {
 
   const [players, setPlayers] = useState(null)
+
+/**FOR DEV ONLY**/
+//   const [players, setPlayers] = useState([
+//     {name: 'Test 1',
+//      score: 0
+//   },
+//     {name: 'Test 2',
+//      score: 0
+//   },
+//     {name: 'Test 3',
+//      score: 0
+//   },
+//     {name: 'Test 4',
+//      score: 0
+//   }
+// ])
   
   useEffect(() => {
     if (props) {
       setPlayers(props.history.location.state.details.playerObjs)
-    }
+    } 
   }, [props])
 
   return (
-    <div className='playerList row d-flex justify-content-center align-items-center'>
-        {
-          players && players.map((playerObj, index) => {
-          return (
-            <div className='playerBlock col-12 d-flex flex-column justify-content-center align-items-center'>
-              <h2 key={index}>Player: {playerObj.name}</h2>
-              <h2 key={index}>Score: {playerObj.score}</h2>
-              <br/>
-            </div>
-          )
-          })
-        }
-    </div>
+    players && players.map((player, index) => {
+     return (
+     <PlayerCard
+        player = {player}
+        index = {index}
+      />
+      )
+    })
   )
 }
 
