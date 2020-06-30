@@ -5,9 +5,15 @@ let session_id_count = 1
 module.exports = {
 
   test: (req, res) => {
-    let {teamList} = req.body 
-    console.log('ctrl teamlist:', teamList)
-    res.status(200).send('yay, this is working!')
+    let {players} = req.body 
+    let playerObjs = []
+    for (let i=0; i<players.length; i++) {
+      playerObjs.push({
+        name: players[i],
+        score: 0
+      })
+    }
+    res.status(200).send({playerObjs: playerObjs})
   }
 
 }
