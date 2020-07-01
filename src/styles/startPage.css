@@ -8,5 +8,9 @@
   text-align: center;
 }
 
+.playerName {
+  color: var(--primDark);
+}
+
 
 

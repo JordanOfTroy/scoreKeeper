@@ -67,8 +67,8 @@ const StartPage = ({ history }) => {
             {
               players.map((playerName, index) => {
               return(
-                <div key={index} className='w-75 d-flex justify-content-between align-items-center mb-3'>
-                  <h1 className='playerName mb-2'>{playerName}</h1>
+                <div key={index} className='playerName w-75 d-flex justify-content-between align-items-center mb-3'>
+                  <h1 className='mb-2'>{playerName}</h1>
                   <i class="far fa-trash-alt" onClick={() => deletePlayer(index)}></i>
                 </div>
               )
