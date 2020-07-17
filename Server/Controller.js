@@ -3,7 +3,6 @@ require('dotenv').config()
 let session_id_count = 1
 
 module.exports = {
-
   test: (req, res) => {
     let {players} = req.body 
     let playerObjs = []

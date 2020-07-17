@@ -3,7 +3,7 @@ import PlayerCard from './PlayerCard.js'
 
 const ScorePage = (props) => {
 
-  const [players, setPlayers] = useState(null)
+const [players, setPlayers] = useState(null)
 
 /**FOR DEV ONLY**/
 // const [players, setPlayers] = useState([
@@ -26,47 +26,51 @@ const ScorePage = (props) => {
 // ])
   
   useEffect(() => {
-    if (props) {
-      setPlayers(props.history.location.state.details.playerObjs)
-    } 
-  }, [props])
+    if (props.history.location.state) {
+      setPlayers(props.history.location.state.details.playerObjs);
+    };
+  }, [props]);
 
-  const addScore = (playerScore, index) => {
-    console.log(typeof playerScore, playerScore)
-    // given an index number and array, update the score property inside the element at the given index of the array with the playerScore int
-    let tempState = players
-    tempState[index].score += playerScore
-    console.log(tempState)
-    setPlayers(tempState)
-  }
+  const addScores = () => {
+    const playerScores = [];
+    const playerBlocks = document.getElementsByClassName('playerBlock');
+    for (let i = 0; i < playerBlocks.length; i++) {
+      const newScore = Number(playerBlocks[i].children[1].innerHTML) + Number(playerBlocks[i].children[2].value);
+      const player = {
+        name: playerBlocks[i].children[0].innerHTML,
+        score: newScore
+      };
+      playerBlocks[i].children[2].value = '';
+      playerScores.push(player);
+    }
+    setPlayers(playerScores);
+  };
 
   const findWinner = () => {
-    console.log('You want to find the winner?')
-  }
+    console.log('You want to find the winner?');
+  };
 
   const resetGame = () => {
     console.log('you want to reset the game?')
   }
 
-
-
   return (
     <>
     <div className='buttonRow row w-100 mr-0 ml-0 p-3 d-flex justify-content-between align-items-center'>
+      <button className='bttn' onClick={addScores}>Add Scores</button>
       <button className='bttn' onClick={findWinner}>Find Winner</button>
       <button className='bttn' onClick={resetGame}>Reset Game</button>
     </div>
     <div className='row w-100 d-flex flex-column justify-content-center align-items-center mr-0 ml-r'>
-      {props.history.location.state.details.playerObjs.map((player, index) => {
-       return (
-       <PlayerCard
-          player = {player.name}
-          score = {player.score}
-          index = {index}
-          addScore = {addScore}
-        />
-        )
-      })}
+      {players && players.map((player, index) => {
+        return (
+        <PlayerCard
+            key = {index}
+            player = {player.name}
+            score = {player.score}
+          />
+          )
+        })}
     </div>
     </>
   )

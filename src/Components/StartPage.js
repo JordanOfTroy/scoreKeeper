@@ -51,7 +51,7 @@ const StartPage = ({ history }) => {
             type='submit' 
             value='submit'
             onClick={addPlayer}
-            >Add <i class="fas fa-plus"></i></button>
+            >Add <i className="fas fa-plus"></i></button>
         </div>
         <div className="col-6 d-flex align-items-center justify-content-center">
             <button 
@@ -59,7 +59,7 @@ const StartPage = ({ history }) => {
             type='submit' 
             value='submit'
             onClick={letsPlay}
-            >Play <i class="fas fa-play"></i></button>
+            >Play <i className="fas fa-play"></i></button>
         </div>
       </div>
       <div className='row d-flex justify-content-center align-items-center mt-5'> 
@@ -69,7 +69,7 @@ const StartPage = ({ history }) => {
               return(
                 <div key={index} className='playerName w-75 d-flex justify-content-between align-items-center mb-3'>
                   <h1 className='mb-2'>{playerName}</h1>
-                  <i class="far fa-trash-alt" onClick={() => deletePlayer(index)}></i>
+                  <i className="far fa-trash-alt" onClick={() => deletePlayer(index)}></i>
                 </div>
               )
               })
